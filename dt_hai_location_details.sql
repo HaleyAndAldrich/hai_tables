@@ -1,7 +1,17 @@
 USE [EQuIS]
 GO
 
-/****** Object:  Table [dbo].[dt_hai_location_details]    Script Date: 4/6/2017 3:19:15 PM ******/
+ALTER TABLE [dbo].[dt_hai_location_details] DROP CONSTRAINT [FK__dt_loc_details_rt_hai_APN]
+GO
+
+ALTER TABLE [dbo].[dt_hai_location_details] DROP CONSTRAINT [FK__dt_loc_details_dt_location]
+GO
+
+/****** Object:  Table [dbo].[dt_hai_location_details]    Script Date: 4/7/2017 11:42:21 AM ******/
+DROP TABLE [dbo].[dt_hai_location_details]
+GO
+
+/****** Object:  Table [dbo].[dt_hai_location_details]    Script Date: 4/7/2017 11:42:21 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -15,6 +25,7 @@ CREATE TABLE [dbo].[dt_hai_location_details](
 	[facility_id] [int] NOT NULL,
 	[sys_loc_code] [varchar](20) NOT NULL,
 	[APN] [varchar](40) NULL,
+	[GIS_Area_Type] [varchar] (50),
 	[URL] [varchar](2000) NULL,
 	[description] [varchar](255) NULL,
 	[address] [varchar](255) NULL,
